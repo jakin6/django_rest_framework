@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 
-from backend.api import authentication
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -128,7 +128,15 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# auth_classes=[
+#     'rest_framework.authentication.SessionAuthentication',
+#     'api.authentication.TokenAuthentication'
+# ]
 
+# if DEBUG:
+#     auth_classes= [
+#        'api.authentication.TokenAuthentication' 
+#     ]
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES":[
@@ -136,7 +144,7 @@ REST_FRAMEWORK = {
     'api.authentication.TokenAuthentication'
     ],
     "DEFAULT_PERMISSION_CLASSES":{
-        "rest_framework.authentication.IsAuthenticatedOrReadOnly" #GET
+        "rest_framework.permission.IsAuthenticatedOrReadOnly" #GET
     }
 
 }

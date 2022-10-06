@@ -10,6 +10,8 @@ class IsStaffPermission(permissions.DjangoModelPermissions):
         'PATCH': ['%(app_label)s.change_%(model_name)s'],
         'DELETE': ['%(app_label)s.delete_%(model_name)s'],
     }
+
+    
     # if not request.user.username == "Admin":
     #     return False
     # def has_permission(self, request, view):
