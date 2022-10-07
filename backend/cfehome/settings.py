@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-o8dxz!_y)4hgb#9smn#94gc35)g8r@+pyi9i)fw@4_m74$_@tr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG =True
 
 ALLOWED_HOSTS = []
 
@@ -138,13 +138,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #        'api.authentication.TokenAuthentication' 
 #     ]
 
-REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES":[
-    'rest_framework.authentication.SessionAuthentication',
-    'api.authentication.TokenAuthentication'
-    ],
-    "DEFAULT_PERMISSION_CLASSES":{
-        "rest_framework.permission.IsAuthenticatedOrReadOnly" #GET
-    }
 
-}
+# REST_FRAMEWORK = {
+#     "DEFAULT_AUTHENTICATION_CLASSES":[
+#     'rest_framework.authentication.SessionAuthentication',
+#     'api.authentication.TokenAuthentication'
+#     ],
+#     "DEFAULT_PERMISSION_CLASSES":{
+#         # "rest_framework.permission.IsAuthenticatedOrReadOnly" #GET
+#         # 'rest_framework.permissions.IsAuthenticated',
+#         'rest_framework.permissions.AllowAny',
+#     }
+
+# }
